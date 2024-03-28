@@ -9,10 +9,17 @@ import {
   getCurrentPositionAsync,
 } from 'expo-location';
 import { fetchWeatherByCoords } from './api/meteo';
+import { useFonts } from 'expo-font';
 
 const App = () => {
   const [coordinates, setCoordinates] = useState();
   const [weatherData, setWeatherData] = useState();
+
+  const [isFontLoaded] = useFonts({
+    'Roboto-Mono': require('./assets/fonts/RobotoMonoFont.ttf'),
+  });
+
+  console.log(isFontLoaded);
 
   useEffect(() => {
     getUserCoordinates();
@@ -53,7 +60,7 @@ const App = () => {
     >
       <SafeAreaProvider>
         <SafeAreaView style={style.container}>
-          <Home />
+          {isFontLoaded && <Home />}
         </SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>

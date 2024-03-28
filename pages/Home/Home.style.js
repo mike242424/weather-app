@@ -13,5 +13,6 @@ export const style = StyleSheet.create({
   text: {
     fontSize: 30,
     color: '#fff',
+    fontFamily: 'Roboto-Mono',
   },
 });
