@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 const App = () => {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={style.container}>
         <Home />
       </SafeAreaView>
     </SafeAreaProvider>
