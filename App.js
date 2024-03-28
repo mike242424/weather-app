@@ -5,7 +5,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <Text>App</Text>
+        <Text>Weather App</Text>
       </SafeAreaView>
     </SafeAreaProvider>
   );
