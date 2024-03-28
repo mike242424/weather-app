@@ -1,12 +1,12 @@
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { Text } from 'react-native';
 import { style } from './App.style';
+import Home from './pages/Home/Home';
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <Text>Weather App</Text>
+        <Home />
       </SafeAreaView>
     </SafeAreaProvider>
   );
