@@ -8,13 +8,27 @@ import {
   requestForegroundPermissionsAsync,
   getCurrentPositionAsync,
 } from 'expo-location';
+import { fetchWeatherByCoords } from './api/meteo';
 
 const App = () => {
   const [coordinates, setCoordinates] = useState();
+  const [weatherData, setWeatherData] = useState();
 
   useEffect(() => {
     getUserCoordinates();
   }, []);
+
+  useEffect(() => {
+    async function fetchWeather() {
+      if (coordinates) {
+        const fetchedWeatherData = await fetchWeatherByCoords(coordinates);
+
+        setWeatherData(fetchedWeatherData);
+      }
+    }
+
+    fetchWeather();
+  }, [coordinates]);
 
   async function getUserCoordinates() {
     const { status } = await requestForegroundPermissionsAsync();
@@ -30,6 +44,7 @@ const App = () => {
   }
 
   console.log(coordinates);
+  console.log(weatherData);
   return (
     <ImageBackground
       imageStyle={style.img}
