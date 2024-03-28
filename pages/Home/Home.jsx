@@ -5,13 +5,13 @@ const Home = () => {
   return (
     <>
       <View style={style.basicWeatherContainer}>
-        <Text>Basic Weather</Text>
+        <Text style={style.text}>Basic Weather</Text>
       </View>
       <View style={style.inputContainer}>
-        <Text>Input</Text>
+        <Text style={style.text}>Input</Text>
       </View>
       <View style={style.advancedWeatherContainer}>
-        <Text>Advanced Weather</Text>
+        <Text style={style.text}>Advanced Weather</Text>
       </View>
     </>
   );
