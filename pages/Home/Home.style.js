@@ -10,9 +10,4 @@ export const style = StyleSheet.create({
   advancedWeatherContainer: {
     flex: 1,
   },
-  text: {
-    fontSize: 30,
-    color: '#fff',
-    fontFamily: 'Roboto-Mono',
-  },
 });

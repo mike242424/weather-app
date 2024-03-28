@@ -50,8 +50,8 @@ const App = () => {
     }
   }
 
-  console.log(coordinates);
-  console.log(weatherData);
+  // console.log(coordinates);
+  // console.log(weatherData);
   return (
     <ImageBackground
       imageStyle={style.img}

@@ -1,17 +1,18 @@
 import { Text, View } from 'react-native';
 import { style } from './Home.style';
+import Txt from '../../components/Txt/Txt';
 
 const Home = () => {
   return (
     <>
       <View style={style.basicWeatherContainer}>
-        <Text style={style.text}>Basic Weather</Text>
+        <Txt>Basic Weather</Txt>
       </View>
       <View style={style.inputContainer}>
-        <Text style={style.text}>Input</Text>
+        <Txt anotherStyle={{ fontSize: 90 }}>Input</Txt>
       </View>
       <View style={style.advancedWeatherContainer}>
-        <Text style={style.text}>Advanced Weather</Text>
+        <Txt>Advanced Weather</Txt>
       </View>
     </>
   );
