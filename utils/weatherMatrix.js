@@ -25,3 +25,9 @@ export const weatherInterpretations = [
     image: require('../assets/thunder.png'),
   },
 ];
+
+export function getWeatherInterpretation(code) {
+  weatherInterpretations.find((interpretation) =>
+    weatherInterpretations.codes.includes(code),
+  );
+}
