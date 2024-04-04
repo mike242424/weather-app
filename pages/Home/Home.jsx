@@ -2,13 +2,20 @@ import { Text, View } from 'react-native';
 import { style } from './Home.style';
 import Txt from '../../components/Txt/Txt';
 import BasicWeather from '../../components/BasicWeather/BasicWeather';
+import { getWeatherInterpretation } from '../../utils/weatherMatrix';
 
 const Home = ({ weatherData }) => {
-  console.log(weatherData.current_weather);
+  const currentInterpretation = getWeatherInterpretation(
+    weatherData.current_weather.weathercode,
+  );
+
   return (
     <>
       <View style={style.basicWeatherContainer}>
-        <BasicWeather weatherData={weatherData} />
+        <BasicWeather
+          weatherData={weatherData}
+          weatherInterpretation={currentInterpretation}
+        />
       </View>
       <View style={style.inputContainer}>
         <Txt anotherStyle={{ fontSize: 30 }}>Input</Txt>

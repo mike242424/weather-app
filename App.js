@@ -19,8 +19,6 @@ const App = () => {
     'Roboto-Mono': require('./assets/fonts/RobotoMonoFont.ttf'),
   });
 
-  console.log(isFontLoaded);
-
   useEffect(() => {
     getUserCoordinates();
   }, []);

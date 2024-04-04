@@ -27,7 +27,8 @@ export const weatherInterpretations = [
 ];
 
 export function getWeatherInterpretation(code) {
-  weatherInterpretations.find((interpretation) =>
-    weatherInterpretations.codes.includes(code),
+  const weatherInterpretation = weatherInterpretations.find((interpretation) =>
+    interpretation.codes.includes(code),
   );
+  return weatherInterpretation;
 }

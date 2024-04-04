@@ -20,5 +20,5 @@ export const style = StyleSheet.create({
   temperature: {
     fontSize: 125,
   },
-  img: { height: 50, width: 50, backgroundColor: '#fff' },
+  img: { height: 90, width: 90 },
 });
