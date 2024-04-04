@@ -3,11 +3,12 @@ import { style } from './Home.style';
 import Txt from '../../components/Txt/Txt';
 import BasicWeather from '../../components/BasicWeather/BasicWeather';
 
-const Home = () => {
+const Home = ({ weatherData }) => {
+  console.log(weatherData.current_weather);
   return (
     <>
       <View style={style.basicWeatherContainer}>
-        <BasicWeather />
+        <BasicWeather weatherData={weatherData} />
       </View>
       <View style={style.inputContainer}>
         <Txt anotherStyle={{ fontSize: 30 }}>Input</Txt>

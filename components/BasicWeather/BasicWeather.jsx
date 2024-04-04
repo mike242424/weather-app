@@ -2,7 +2,7 @@ import { Image, Text, View } from 'react-native';
 import Txt from '../Txt/Txt';
 import { style } from './BasicWeather.style';
 
-const BasicWeather = () => {
+const BasicWeather = ({ weatherData }) => {
   return (
     <>
       <View style={style.clock}>
@@ -15,7 +15,9 @@ const BasicWeather = () => {
         <Txt anotherStyle={style.interpretationText}>Sunny</Txt>
       </View>
       <View style={style.temperatureContainer}>
-        <Txt anotherStyle={style.temperature}>3°</Txt>
+        <Txt anotherStyle={style.temperature}>
+          {weatherData.current_weather.temperature}°
+        </Txt>
         <Image style={style.img} />
       </View>
     </>

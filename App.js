@@ -50,8 +50,6 @@ const App = () => {
     }
   }
 
-  // console.log(coordinates);
-  // console.log(weatherData);
   return (
     <ImageBackground
       imageStyle={style.img}
@@ -60,7 +58,7 @@ const App = () => {
     >
       <SafeAreaProvider>
         <SafeAreaView style={style.container}>
-          {isFontLoaded && <Home />}
+          {isFontLoaded && weatherData && <Home weatherData={weatherData} />}
         </SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>
