@@ -3,14 +3,14 @@ import Txt from '../Txt/Txt';
 import { style } from './BasicWeather.style';
 import Clock from '../Clock/Clock';
 
-const BasicWeather = ({ weatherData, weatherInterpretation }) => {
+const BasicWeather = ({ weatherData, weatherInterpretation, city }) => {
   return (
     <>
       <View style={style.clock}>
         <Clock />
       </View>
       <View style={style.city}>
-        <Txt>City</Txt>
+        <Txt>{city}</Txt>
       </View>
       <View style={style.interpretation}>
         <Txt anotherStyle={style.interpretationText}>

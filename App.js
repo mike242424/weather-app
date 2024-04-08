@@ -8,12 +8,13 @@ import {
   requestForegroundPermissionsAsync,
   getCurrentPositionAsync,
 } from 'expo-location';
-import { fetchWeatherByCoords } from './api/meteo';
+import { fetchCityByCoords, fetchWeatherByCoords } from './api/meteo';
 import { useFonts } from 'expo-font';
 
 const App = () => {
   const [coordinates, setCoordinates] = useState();
   const [weatherData, setWeatherData] = useState();
+  const [city, setCity] = useState();
 
   const [isFontLoaded] = useFonts({
     'Roboto-Mono': require('./assets/fonts/RobotoMonoFont.ttf'),
@@ -24,16 +25,22 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    async function fetchWeather() {
-      if (coordinates) {
-        const fetchedWeatherData = await fetchWeatherByCoords(coordinates);
-
-        setWeatherData(fetchedWeatherData);
-      }
+    if (coordinates) {
+      fetchCity(coordinates);
+      fetchWeather(coordinates);
     }
-
-    fetchWeather();
   }, [coordinates]);
+
+  async function fetchWeather(coords) {
+    const fetchedWeatherData = await fetchWeatherByCoords(coords);
+    setWeatherData(fetchedWeatherData);
+  }
+
+  async function fetchCity(coords) {
+    const cityData = await fetchCityByCoords(coords);
+    console.log(cityData);
+    setCity(cityData);
+  }
 
   async function getUserCoordinates() {
     const { status } = await requestForegroundPermissionsAsync();
@@ -48,6 +55,8 @@ const App = () => {
     }
   }
 
+  console.log(coordinates);
+
   return (
     <ImageBackground
       imageStyle={style.img}
@@ -56,7 +65,9 @@ const App = () => {
     >
       <SafeAreaProvider>
         <SafeAreaView style={style.container}>
-          {isFontLoaded && weatherData && <Home weatherData={weatherData} />}
+          {isFontLoaded && weatherData && (
+            <Home weatherData={weatherData} city={city} />
+          )}
         </SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>
