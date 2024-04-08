@@ -4,8 +4,9 @@ import Txt from '../../components/Txt/Txt';
 import BasicWeather from '../../components/BasicWeather/BasicWeather';
 import { getWeatherInterpretation } from '../../utils/weatherMatrix';
 import AdvancedWeather from '../../components/AdvancedWeather/AdvancedWeather';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
-const Home = ({ weatherData, city }) => {
+const Home = ({ weatherData, city, onSubmit }) => {
   const currentInterpretation = getWeatherInterpretation(
     weatherData.current_weather.weathercode,
   );
@@ -20,7 +21,7 @@ const Home = ({ weatherData, city }) => {
         />
       </View>
       <View style={style.inputContainer}>
-        <Txt anotherStyle={{ fontSize: 30 }}>Input</Txt>
+        <SearchBar onSubmit={onSubmit} />
       </View>
       <View style={style.advancedWeatherContainer}>
         <AdvancedWeather weatherData={weatherData} />

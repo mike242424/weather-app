@@ -65,6 +65,10 @@ const App = () => {
     }
   }
 
+  function onSubmit(newCity) {
+    setCity(newCity);
+  }
+
   return (
     <NavigationContainer theme={navTheme}>
       <ImageBackground
@@ -80,7 +84,7 @@ const App = () => {
                 screenOptions={{ headerShown: false, animation: 'fade' }}
               >
                 <Stack.Screen name="Home">
-                  {() => <Home city={city} weatherData={weatherData} />}
+                  {() => <Home city={city} weatherData={weatherData} onSubmit={onSubmit}/>}
                 </Stack.Screen>
                 <Stack.Screen name="Forecast" component={Forecast} />
               </Stack.Navigator>

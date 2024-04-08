@@ -7,7 +7,7 @@ import { DAYS, getWeatherInterpretation } from '../../utils/weatherMatrix';
 
 const Forecast = () => {
   const { params } = useRoute();
-  console.log(params);
+
   const forecastList = (
     <View style={{ marginTop: 50 }}>
       {params.daily.time.map((time, index) => {
