@@ -1,13 +1,13 @@
 import { Image, Text, View } from 'react-native';
 import Txt from '../Txt/Txt';
 import { style } from './BasicWeather.style';
+import Clock from '../Clock/Clock';
 
 const BasicWeather = ({ weatherData, weatherInterpretation }) => {
-  console.log(weatherInterpretation);
   return (
     <>
       <View style={style.clock}>
-        <Txt>{new Date().toLocaleTimeString()}</Txt>
+        <Clock />
       </View>
       <View style={style.city}>
         <Txt>City</Txt>

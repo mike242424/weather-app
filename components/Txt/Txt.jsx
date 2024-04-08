@@ -6,7 +6,7 @@ const IPHONE_13_RATIO = 0.001072961373390558;
 const Txt = ({ children, anotherStyle, ...restProps }) => {
   const fontSize = anotherStyle?.fontSize || style.text.fontSize;
   const { height } = useWindowDimensions();
-  console.log(Math.round(fontSize * IPHONE_13_RATIO * height));
+  // console.log(Math.round(fontSize * IPHONE_13_RATIO * height));
 
   return (
     <Text
