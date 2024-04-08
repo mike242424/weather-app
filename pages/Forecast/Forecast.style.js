@@ -1,3 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-export const style = StyleSheet.create({});
+export const style = StyleSheet.create({
+  headerContainer: {
+    flexDirection: 'row',
+  },
+});
