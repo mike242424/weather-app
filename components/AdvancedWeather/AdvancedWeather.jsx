@@ -5,7 +5,6 @@ import {
   StyledLabel,
   StyledValue,
 } from './AdvancedWeather.style';
-import Txt from '../Txt/Txt';
 
 const AdvancedWeather = ({ weatherData }) => {
   return (

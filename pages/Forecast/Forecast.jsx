@@ -1,8 +1,11 @@
-import { Text } from 'react-native';
 import { style } from './Forecast.style';
+import Txt from '../../components/Txt/Txt';
+import { useRoute } from '@react-navigation/native';
 
 const Forecast = () => {
-  return <Text>Forecast</Text>;
+  const { params } = useRoute();
+
+  return <Txt>Forecast</Txt>;
 };
 
 export default Forecast;

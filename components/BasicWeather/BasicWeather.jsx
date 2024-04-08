@@ -1,9 +1,11 @@
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import Txt from '../Txt/Txt';
 import { style } from './BasicWeather.style';
 import Clock from '../Clock/Clock';
+import { useNavigation } from '@react-navigation/native';
 
 const BasicWeather = ({ weatherData, weatherInterpretation, city }) => {
+  const nav = useNavigation();
   return (
     <>
       <View style={style.clock}>
@@ -18,9 +20,13 @@ const BasicWeather = ({ weatherData, weatherInterpretation, city }) => {
         </Txt>
       </View>
       <View style={style.temperatureContainer}>
-        <Txt anotherStyle={style.temperature}>
-          {Math.round(weatherData.current_weather.temperature)}°
-        </Txt>
+        <TouchableOpacity
+          onPress={() => nav.navigate('Forecast', { city, ...weatherData })}
+        >
+          <Txt anotherStyle={style.temperature}>
+            {Math.round(weatherData.current_weather.temperature)}°
+          </Txt>
+        </TouchableOpacity>
         <Image style={style.img} source={weatherInterpretation.image} />
       </View>
     </>

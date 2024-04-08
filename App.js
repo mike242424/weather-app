@@ -77,7 +77,7 @@ const App = () => {
             {isFontLoaded && weatherData && (
               <Stack.Navigator
                 initialRouteName="Home"
-                screenOptions={{ headerShown: false }}
+                screenOptions={{ headerShown: false, animation: 'fade' }}
               >
                 <Stack.Screen name="Home">
                   {() => <Home city={city} weatherData={weatherData} />}
